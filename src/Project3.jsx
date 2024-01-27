@@ -41,16 +41,17 @@ function Project3() {
               <input className="input" id="first-name"></input>
             </div>
 
-            <div className="double-column">
+            {/* <div className="double-column"> */}
               <div>
                 <label for="first-lastname">Primer apellido:</label>
                 <input className="input" id="first-lastname"></input>
               </div>
+              
               <div>
                 <label for="second-lastname">Segundo apellido:</label>
                 <input className="input" id="second-lastname"></input>
               </div>
-            </div>
+           {/* <div className="double-column"> */}
 
             <div>
               <label for="email">Email:</label>

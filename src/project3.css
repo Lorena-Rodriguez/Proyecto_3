@@ -7,6 +7,10 @@ nav {
   justify-content: space-between;
 }
 
+.navBar {
+  padding-bottom: 40px;
+}
+
 .iconHolder,
 .homeIcon,
 .helpIcon {
@@ -74,16 +78,16 @@ a {
   padding: 20px
 }
 
-.double-column {
+/* .double-column {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10px;
-}
+} */
 
-#first-lastname,
+/* #first-lastname,
 #second-lastname {
   width: 115px
-}
+} */
 
 
 .input {

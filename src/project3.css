@@ -16,14 +16,22 @@ nav {
 .helpIcon {
   display: flex;
   align-items: center;
-  margin: 5px;
+  margin: 5px
+}
 
+.homeIcon{
+  padding-right: 15px;
+}
+
+.helpIcon{
+  padding-right: 15px;
 }
 
 #logo {
   width: 120px;
   height: auto;
   margin: 5px;
+  padding-left: 45px;
   transition: transform 0.5s ease-in-out;
 }
 

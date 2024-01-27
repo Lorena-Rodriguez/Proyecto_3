@@ -1,0 +1,303 @@
+* {
+  font-family: Open Sans;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.iconHolder,
+.homeIcon,
+.helpIcon {
+  display: flex;
+  align-items: center;
+  margin: 5px;
+
+}
+
+#logo {
+  width: 120px;
+  height: auto;
+  margin: 5px;
+  transition: transform 0.5s ease-in-out;
+}
+
+#logo:hover {
+  transform: rotate(360deg) scale(1.1);
+}
+
+.icon {
+  width: 30px;
+  height: auto;
+  margin: 2px;
+}
+
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.link {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s, font-size 0.3s;
+}
+
+.link:hover {
+  color: #fa0780;
+  font-size: 24px;
+}
+
+
+
+/* Aquí empiezan los estilos del FORMULARIO */
+
+.formulary {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  font-weight: 400;
+  font-size: 12px;
+  margin: 50px;
+}
+
+.formulary-background {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  width: 345px;
+  height: 705px;
+  background-color: #F8DBDC;
+  border-radius: 30px;
+  padding: 20px
+}
+
+.double-column {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+#first-lastname,
+#second-lastname {
+  width: 115px
+}
+
+
+.input {
+  width: 245px;
+  height: 35px;
+  border-radius: 10px;
+  border: 0.5px solid #000;
+  margin-top: 10px;
+  background-color: white;
+}
+
+.send-button {
+  background-color: #D4E2D4;
+  border-radius: 20px;
+  border-color: #000000;
+  border: 1px solid;
+  font-size: 16px;
+  width: 165px;
+  height: 49px;
+}
+
+#send-button-container {
+  display: flex;
+  justify-content: center;
+  padding-top: 30px;
+}
+
+
+
+
+@media screen and (min-width: 429px) {
+
+  /* Responsive Desktop */
+  body {
+      /* width: 100%;
+      display: flex;
+      flex-wrap: wrap; */
+      /* margin: 20px; */
+      /* Añade espacio alrededor de todo el cuerpo */
+      background-color: #FAF3F0;
+      font-family: 'Open Sans', sans-serif;
+  }
+
+  .mainGroup {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      justify-content: space-around;
+  }
+
+  td,
+  th {
+      text-align: center;
+      padding: 15px;
+      border: none;
+      color: #393838;
+  }
+
+  tr:nth-child(even) {
+      background-color: #D4E2D4;
+      /* Color de fondo para filas pares */
+  }
+
+  tr:nth-child(odd) {
+      background-color: #FAF3F0;
+      /* Color de fondo para filas impares */
+  }
+
+  #table-title {
+      text-align: center;
+      margin-bottom: 10px;
+      font-size: xx-large;
+  }
+
+  table {
+      border-collapse: collapse;
+      /* Fusiona los bordes de las celdas */
+      width: 100%;
+  }
+
+  .form,
+  .list {
+      padding: 10px;
+      /* Añade espacio alrededor del contenido del formulario y la lista */
+      box-sizing: border-box;
+      flex: 1;
+      /* Ambos ocupan el mismo espacio inicialmente */
+  }
+
+  .form {
+      background-color: #F8DBDC;
+      margin-right: 5px;
+  }
+
+  .list {
+      margin-top: 10px;
+      /* Agrega un pequeño espacio entre form y list */
+  }
+
+  .listButton button {
+      background-color: #D4E2D4;
+      border-radius: 10px;
+      border-color: #000000;
+      border: 1px solid;
+      font-size: 16px;
+      width: 165px;
+      height: 49px;
+  }
+
+  select {
+      background-color: #D4E2D4;
+      border-radius: 10px;
+      border-color: #000000;
+      border: 1px solid;
+      font-size: 16px;
+      width: 165px;
+      height: 49px;
+      text-align: left;
+      padding-left: 20px;
+  }
+
+  select option {
+      text-align: left;
+  }
+
+  .listAndButtonsGroup {
+      display: flex;
+      flex-direction: column;
+  }
+
+  #loadlistbutton {
+      padding-left: 75px;
+  }
+
+  .listButton {
+      display: flex;
+      flex-direction: row;
+      /* justify-content: space-around; */
+      align-items: center;
+      padding-top: 50px;
+      padding-left: 300px;
+      /* padding-right: 70px; */
+  }
+}
+
+@media screen and (max-width: 430px) {
+
+  .mainGroup {
+      flex-direction: column;
+  }
+
+  .listAndButtonsGroup {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .listButton button {
+      background-color: #D4E2D4;
+      border-radius: 10px;
+      border-color: #000000;
+      border: 1px solid;
+      font-size: 16px;
+      width: 165px;
+      height: 49px;
+  }
+
+  #loadlistbutton {
+      padding-top: 42px;
+  }
+
+  select {
+      background-color: #D4E2D4;
+      border-radius: 10px;
+      border-color: #000000;
+      border: 1px solid;
+      font-size: 16px;
+      width: 165px;
+      height: 49px;
+      text-align: left;
+      padding-left: 20px;
+  }
+
+  select option {
+      text-align: left;
+  }
+
+  .listButton {
+      display: flex;
+      flex-direction: column;
+      padding-top: 86px;
+      align-items: center;
+  }
+
+  /* responsive phone */
+
+  .form,
+  .list {
+      flex: 1;
+      /* Ambos ocupan el mismo espacio */
+      margin-right: 0;
+      margin-left: 0;
+  }
+
+  .list {
+      margin-top: 0;
+      /* Restablece el espacio entre form y list */
+  }
+
+  .form {
+      order: 2;
+      /* Cambia el orden de visualización en dispositivos móviles */
+      margin-top: 10px;
+      /* Agrega espacio entre list y form en dispositivos móviles */
+
+  }
+}

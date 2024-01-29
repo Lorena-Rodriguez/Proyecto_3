@@ -1,154 +1,91 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './project3.css'
 
-function Project3() {
-  const [count, setCount] = useState(0)
+import { useState, useEffect } from "react";
 
-  return (
-    <>
- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap"></link>
+const UserList = () =>{
+
+   
+    const [user, setUser] = useState({  
+        name:'',
+        lastName:'',
+        secondLastName:'',
+        email: '',
+        telephone:'',
+
+    });
+
+    const [userList, setUserList] = useState([]);
+
+    function handleNameChange(e){
+        setUser({
+            ...user,name:e.target.value});
+    };
+    function handlelastNameChange(e){
+        setUser({
+            ...user,lastName:e.target.value});
+    };
+    function handlesecondLastNameChange(e){              
+        setUser({
+            ...user,secondLastName:e.target.value});
+    };
+    function handleemailChange(e){
+      setUser({
+            ...user,email:e.target.value});
+    }
+    function handletelephoneChange(e){
+      setUser({
+            ...user,telephone:e.target.value});
+    }
+
+
+    function handleAddUserToList() {
+        setUserList(prevUserList => [...prevUserList, user]);
+
  
-      <div className="container" id="mainContainer">
-        <nav className="navBar">
+        setUser({...user, name: '', lastName: '', secondLastName: '', email: '', telephone: '' });
+        document.getElementById("textName").value = "";
+        document.getElementById("textLastName").value = "";
+        document.getElementById("secondLastName").value = "";
+        document.getElementById('email').value = "";
+        document.getElementById("telephone").value = "";
+      }
 
-          <a href="../landingPage/index.html">
-            <img className="link" id="logo" src="public/logo.svg" alt="logo"></img>
-          </a>
+         console.log(userList);
 
-          <div className="iconHolder">
+    return(
+        <>
+        <h1>24 hour Party People</h1>
+       
 
-            <div className="homeIcon">
-              <img className="icon" src="public/home-mobile-ui-svgrepo-com.svg" alt="icon-home"></img>
-              <h3> <a className="link" href="../landingPage/index.html">Home</a> </h3>
-            </div>
-            <div className="helpIcon">
-              <img className="icon" src="public/help-circle-svgrepo-com.svg" alt="icon-help"></img>
-              <h3> <a className="link" href="#">Help</a> </h3>
-            </div>
-          </div>
-        </nav>
-      </div>
-
-      <section className="mainGroup">
-        <section className="formulary-background">
-          <form className="formulary">
-
-
-            <div>
-              <label for="first-name">Nombre:</label>
-              <input className="input" id="first-name"></input>
-            </div>
-
-            {/* <div className="double-column"> */}
-              <div>
-                <label for="first-lastname">Primer apellido:</label>
-                <input className="input" id="first-lastname"></input>
-              </div>
-              
-              <div>
-                <label for="second-lastname">Segundo apellido:</label>
-                <input className="input" id="second-lastname"></input>
-              </div>
-           {/* <div className="double-column"> */}
-
-            <div>
-              <label for="email">Email:</label>
-              <input type="email" className="input" id="email"></input>
-            </div>
-
-            <div>
-              <label for="telephone">Teléfono:</label>
-              <input className="input" id="telephone"></input>
-            </div>
-              <div id='send-button-container'>
-                <button type='button' className='send-button'>Enviar</button> {/* Aquí faltaría el  onclick="addToTable()" */}
-
-              </div>
-          </form>
-        </section>
-
-        <section className='listAndButtonsGroup'>
-          <section>
-
-            <div className='list'>
-              <h1 id='table-title'>
-                Listado
-              </h1>
-
-              <table id='myTable'>
-
-                <tr>
-                  <th>
-                    Nombre:
-                  </th>
-
-                  <th>
-                    Primer Apellido:
-                  </th>
-
-                  <th>
-                    Segundo Apellido:
-                  </th>
-
-                  <th>
-                    Email:
-                  </th>
-
-                  <th>
-                    Teléfono:
-                  </th>
-
-                </tr>
-
-                <tbody id='tableBody'>
-
-                  <tr id='row1'>
-                    <td>
-                      Lorena
-                    </td>
-                    <td>
-                      Rodríguez
-                    </td>
-                    <td>
-                      Cortés
-                    </td>
-                    <td>
-                      lorenarodriguezc@gmail.com
-                    </td>
-                    <td>
-                      666 333 222
-                    </td>
-                    
-                    <td>
-                      <img src='public/edit-icon.svg' className='edit-icon' alt='Editar'></img>  {/* Aquí faltaría el onclick="editRow('row1')"  */}
-                      <img src='public/delete-icon.svg' className='delete-icon' alt='Eliminar'></img>  {/* Aquí faltaría el onclick="deleteRow('row1')" */}
-                    </td>
-
-                  </tr>
-                </tbody>
-              </table>
-
-            </div>
-          </section>
+        <label >
+        <input type="text" htmlFor="userName" name="userName" id="textName" value={user.name} onChange={handleNameChange}/>
+        </label>
+        <label >
+        <input type="text" htmlFor="userLastName" name="userlastName" id="textLastName" value={user.lastName} onChange={handlelastNameChange}/>
+        </label>
+        <label >
+        <input type="text" htmlFor="secondLastName" name="secondLastName" id="textsecondLastName" value={user.secondLastName} onChange={handlesecondLastNameChange}/> 
+        </label>
+        <label>
+        <input type="text" htmlFor="email" name="email" id="email" value={user.email} onChange={handleemailChange}/>
+        </label>
+        <label>
+        <input type="text" htmlFor="telephone" name="telephone" id="telephone" value={user.telephone} onChange={handletelephoneChange}/>
+        </label>
 
 
-          <section className='listButton'>
+        <button onClick={handleAddUserToList}>Añadir usuario</button>
+        <ol>
 
-            <section>
-              <button type='button' id="saveListButton">
-                Guardar
-              </button>
-            </section>
+        {
+            userList.map((user, index)=>(
+                <li key={index}> {user.name} {user.lastName} {user.secondLastName} {user.email} {user.telephone} </li>
+            ))
+        }
 
-
-
-          </section>
-        </section>
-      </section>
-
-    </>
-  )
+        </ol>
+        </>
+        
+    )
 }
-export default Project3;
+
+export default UserList;

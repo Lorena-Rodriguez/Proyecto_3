@@ -1,9 +1,20 @@
 {
-    "users" : [
-        {
-            "id" : "",
-            "userName" : "Peppa",
-            "userSurname" : "Pig"
-        }
-    ]
+  "users": [
+    {
+      "id": "",
+      "name": "Peppa",
+      "lastName": "Pig",
+      "secondLastName": "Pog",
+      "email": "email@email",
+      "telephone": "t666 666 222"
+    },
+    {
+      "id": "7766",
+      "name": "lore",
+      "lastName": "rod",
+      "secondLastName": "cor",
+      "email": "lr",
+      "telephone": "47847"
+    }
+  ]
 }

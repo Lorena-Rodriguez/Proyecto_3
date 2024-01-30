@@ -1,5 +1,6 @@
 
 import { useState, useEffect } from "react";
+import { UserService } from "./userservice";
 
 const UserList = () =>{
 
@@ -15,7 +16,15 @@ const UserList = () =>{
 
     const [userList, setUserList] = useState([]);
 
-    function handleNameChange(e){
+    async function getData(){
+        let users = await UserService.getAllUsers();
+        setUserList(users)
+    }
+    getData();
+
+
+
+    function handlenameChange(e){
         setUser({
             ...user,name:e.target.value});
     };
@@ -37,19 +46,16 @@ const UserList = () =>{
     }
 
 
-    function handleAddUserToList() {
-        setUserList(prevUserList => [...prevUserList, user]);
+    async function handleAddUserToList() {
+        // setUserList(prevUserList => [...prevUserList, user]);
+        await UserService.submitUser(user);
 
  
-        setUser({...user, name: '', lastName: '', secondLastName: '', email: '', telephone: '' });
-        document.getElementById("textName").value = "";
-        document.getElementById("textLastName").value = "";
-        document.getElementById("secondLastName").value = "";
-        document.getElementById('email').value = "";
-        document.getElementById("telephone").value = "";
+        setUser({ name: '', lastName: '', secondLastName: '', email: '', telephone: '' });
+       
       }
 
-         console.log(userList);
+         
 
     return(
         <>
@@ -57,7 +63,7 @@ const UserList = () =>{
        
 
         <label >
-        <input type="text" htmlFor="userName" name="userName" id="textName" value={user.name} onChange={handleNameChange}/>
+        <input type="text" htmlFor="username" name="username" id="textname" value={user.name} onChange={handlenameChange}/>
         </label>
         <label >
         <input type="text" htmlFor="userLastName" name="userlastName" id="textLastName" value={user.lastName} onChange={handlelastNameChange}/>

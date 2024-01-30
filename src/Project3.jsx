@@ -50,10 +50,31 @@ const UserList = () =>{
         // setUserList(prevUserList => [...prevUserList, user]);
         await UserService.submitUser(user);
 
- 
         setUser({ name: '', lastName: '', secondLastName: '', email: '', telephone: '' });
        
       }
+
+    
+      //LORENA
+      const handleUpdateUser = async () => {
+        try {
+            // Actualiza el usuario en el servidor
+            await UserService.updateUser(user.id, user);
+        } catch (error) {
+            // Maneja el error aquí
+            console.error('Ocurrió un error al actualizar el usuario', error);
+        }
+    };
+      function handleNameChange(e){
+        const newName = e.target.value;
+        setUser({
+            ...user,
+            name: newname
+        });
+    
+        // Actualiza el usuario en el servidor después de cambiar el nombre
+        handleUpdateUser();
+    };
 
          
 
@@ -80,15 +101,19 @@ const UserList = () =>{
 
 
         <button onClick={handleAddUserToList}>Añadir usuario</button>
+        {/* LORENA */}
+        {/* <button onClick={handleNameChange}>Editar usuario</button> */}
         <ol>
 
         {
             userList.map((user, index)=>(
-                <li key={index}> {user.name} {user.lastName} {user.secondLastName} {user.email} {user.telephone} </li>
+                <li key={index}> {user.name} {user.lastName} {user.secondLastName} {user.email} {user.telephone} <button onClick={handleNameChange}>Editar usuario</button></li>
             ))
         }
 
         </ol>
+
+      
         </>
         
     )

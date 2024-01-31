@@ -1,12 +1,3 @@
 {
-  "users": [
-    {
-      "id": "a5b6",
-      "name": "lore",
-      "lastName": "rod",
-      "secondLastName": "cor",
-      "email": "lorenarodriguezc@gmail.com",
-      "telephone": "666555444"
-    }
-  ]
+  "users": []
 }

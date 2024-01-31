@@ -41,7 +41,7 @@ const UserList = () => {
 
     }
 
-    //Llevamos el usuario al formulario para editarlo posteriormente.
+    //Llevamos el usuario al formulario para editarlo posteriormente (al pulsar en su botón)
     async function handleEditUser(user) {
 
         //  console.log('user '+user);

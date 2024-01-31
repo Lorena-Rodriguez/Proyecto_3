@@ -23,6 +23,9 @@ const UserList = () =>{
     getData();
 
 
+    async function handleDeleteUser (id) {
+    await UserService.deleteUser(id)
+}
 
     function handlenameChange(e){
         setUser({
@@ -107,7 +110,11 @@ const UserList = () =>{
 
         {
             userList.map((user, index)=>(
-                <li key={index}> {user.name} {user.lastName} {user.secondLastName} {user.email} {user.telephone} <button onClick={handleNameChange}>Editar usuario</button></li>
+                <li key={index}> {user.name} {user.lastName} {user.secondLastName} {user.email}
+                 {user.telephone} 
+                 <button onClick={() => handleDeleteUser(user.id)}>Eliminar</button>
+                 <button onClick={() => handleEditUser(user)}>Editar</button>  
+                 </li>
             ))
         }
 

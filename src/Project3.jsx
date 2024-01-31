@@ -66,7 +66,7 @@ const UserList = () =>{
         <input type="text" htmlFor="username" name="username" id="textname" value={user.name} onChange={handlenameChange}/>
         </label>
         <label >
-        <input type="text" htmlFor="userLastName" name="userlastName" id="textLastName" value={user.lastName} onChange={handlelastNameChange}/>
+        <input type="text" htmlFor="userlastName" name="userlastName" id="textlastName" value={user.lastName} onChange={handlelastNameChange}/>
         </label>
         <label >
         <input type="text" htmlFor="secondLastName" name="secondLastName" id="textsecondLastName" value={user.secondLastName} onChange={handlesecondLastNameChange}/> 

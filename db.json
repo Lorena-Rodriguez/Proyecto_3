@@ -1,3 +1,36 @@
 {
-  "users": []
+  "users": [
+    {
+      "id": "bdf1",
+      "name": "rafa",
+      "lastName": "dsd",
+      "secondLastName": "",
+      "email": "",
+      "telephone": ""
+    },
+    {
+      "id": "1de6",
+      "name": "lore",
+      "lastName": "sda",
+      "secondLastName": "sda",
+      "email": "",
+      "telephone": ""
+    },
+    {
+      "id": "84ab",
+      "name": "hola",
+      "lastName": "",
+      "secondLastName": "",
+      "email": "",
+      "telephone": ""
+    },
+    {
+      "id": "819f",
+      "name": "3333",
+      "lastName": "33",
+      "secondLastName": "",
+      "email": "",
+      "telephone": ""
+    }
+  ]
 }

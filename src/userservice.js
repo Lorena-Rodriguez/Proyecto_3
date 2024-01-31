@@ -28,7 +28,12 @@ export const UserService = {
 
         await apiClient.delete(`/users/${id}`)
        
-    }
+    },
+    async updateUser(user) {
+        await apiClient.patch(`/users/${user.id}`, user);
+        
+        //await apiClient.patch("/users", currentlyUser)
+    },
 
     
 

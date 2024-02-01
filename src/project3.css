@@ -2,6 +2,16 @@
   font-family: Open Sans;
 }
 
+body {
+  /* width: 100%;
+  display: flex;
+  flex-wrap: wrap; */
+  /* margin: 20px; */
+  /* Añade espacio alrededor de todo el cuerpo */
+  background-color: #FAF3F0;
+  font-family: 'Open Sans', sans-serif;
+}
+
 nav {
   display: flex;
   justify-content: space-between;
@@ -73,30 +83,21 @@ a {
   font-weight: 400;
   font-size: 12px;
   margin: 50px;
+  
 }
+
 
 .formulary-background {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
   gap: 10px;
   width: 345px;
-  height: 705px;
+  height: 550;
   background-color: #F8DBDC;        
   border-radius: 30px;
   padding: 20px
 }
-
-/* .double-column {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-} */
-
-/* #first-lastname,
-#second-lastname {
-  width: 115px
-} */
-
 
 .input {
   width: 245px;
@@ -124,20 +125,42 @@ a {
 }
 
 
+/*Estilos de TABLA*/
 
+td,
+th {
+    text-align: center;
+    padding: 15px;
+    border: none;
+    color: #393838;
+}
 
-@media screen and (min-width: 429px) {
+tr:nth-child(even) {
+    background-color: #D4E2D4;
+    /* Color de fondo para filas pares */
+}
+
+tr:nth-child(odd) {
+    background-color: #FAF3F0;
+    /* Color de fondo para filas impares */
+}
+
+#table-title {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: xx-large;
+}
+
+table {
+    border-collapse: collapse;
+    /* Fusiona los bordes de las celdas */
+    width: 100%;
+}
+
+@media screen and (min-width: 430px) {
 
   /* Responsive Desktop */
-  body {
-      /* width: 100%;
-      display: flex;
-      flex-wrap: wrap; */
-      /* margin: 20px; */
-      /* Añade espacio alrededor de todo el cuerpo */
-      background-color: #FAF3F0;
-      font-family: 'Open Sans', sans-serif;
-  }
+ 
 
   .mainGroup {
       display: flex;
@@ -146,7 +169,7 @@ a {
       justify-content: space-around;
   }
 
-  td,
+  /* td,
   th {
       text-align: center;
       padding: 15px;
@@ -174,8 +197,11 @@ a {
       border-collapse: collapse;
       /* Fusiona los bordes de las celdas */
       width: 100%;
-  }
+  } */
 
+  .listTable{
+    width: 900px;
+  }
   .form,
   .list {
       padding: 10px;
@@ -239,12 +265,13 @@ a {
       padding-left: 300px;
       /* padding-right: 70px; */
   }
-}
+
 
 @media screen and (max-width: 430px) {
 
   .mainGroup {
       flex-direction: column;
+      
   }
 
   .listAndButtonsGroup {
@@ -298,6 +325,7 @@ a {
       /* Ambos ocupan el mismo espacio */
       margin-right: 0;
       margin-left: 0;
+      
   }
 
   .list {
@@ -312,4 +340,20 @@ a {
       /* Agrega espacio entre list y form en dispositivos móviles */
 
   }
+
+  .listTable{
+    width: 428px;
+  }
+  
+  Agrego 
+  .list {
+    overflow-x: auto;
+  }
+  
+ 
 }
+
+
+
+
+

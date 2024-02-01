@@ -1,6 +1,8 @@
 
 import { useState, useEffect } from "react";
 import { UserService } from "./userservice";
+import "./project3.css"
+
 
 const UserList = () => {
 
@@ -51,7 +53,6 @@ const UserList = () => {
 
     }
 
-
     async function handleDeleteUser(id) {
         await UserService.deleteUser(id);
     }
@@ -86,58 +87,175 @@ const UserList = () => {
     }
 
 
-    // async function handleAddUserToList() {
-    //     // setUserList(prevUserList => [...prevUserList, user]);
-    //     await UserService.submitUser(user);
-
-    //     setUser({ name: '', lastName: '', secondLastName: '', email: '', telephone: '' });
-
-    // }
-
-
-
-
-
 
 
     return (
+
         <>
-            <h1>24 hour Party People</h1>
+
+            {/* Navbar */}
+
+            <div class="container" id="mainContainer">
+
+                <nav class="navBar">
+                    <a href="../landingPage/index.html">
+                        <img class="link" id="logo" src="public/logo.svg" alt="logo"></img>
+                    </a>
+                    <div class="iconHolder">
+
+                        <div class="homeIcon">
+                            <img class="icon" src="public/home-mobile-ui-svgrepo-com.svg" alt="icon-home"></img>
+                            <h3> <a class="link" href="../landingPage/index.html">Home</a> </h3>
+                        </div>
+                        <div class="helpIcon">
+                            <img class="icon" src="public/help-circle-svgrepo-com.svg" alt="icon-help"></img>
+                            <h3> <a class="link" href="#">Help</a> </h3>
+                        </div>
+
+                    </div>
+
+                </nav>
+
+            </div>
 
 
-            <label >
-                <input type="text" htmlFor="username" name="username" id="textname" value={user.name} onChange={handlenameChange} />
-            </label>
-            <label >
-                <input type="text" htmlFor="userLastName" name="userlastName" id="textLastName" value={user.lastName} onChange={handlelastNameChange} />
-            </label>
-            <label >
-                <input type="text" htmlFor="secondLastName" name="secondLastName" id="textsecondLastName" value={user.secondLastName} onChange={handlesecondLastNameChange} />
-            </label>
-            <label>
-                <input type="text" htmlFor="email" name="email" id="email" value={user.email} onChange={handleemailChange} />
-            </label>
-            <label>
-                <input type="text" htmlFor="telephone" name="telephone" id="telephone" value={user.telephone} onChange={handletelephoneChange} />
-            </label>
+            {/* Formulario */}
 
 
-            <button onClick={handleAddUserToList}>Añadir usuario</button>
-            {/* LORENA */}
-            {/* <button onClick={handleNameChange}>Editar usuario</button> */}
-            <ol>
+            <section class="mainGroup">
+                
+                <section class="formulary-background">
 
-                {
-                    userList.map((user, index) => (
-                        <li key={index}> {user.name} {user.lastName} {user.secondLastName} {user.email}
-                            {user.telephone}
-                            <button onClick={() => handleDeleteUser(user.id)}>Eliminar</button>
-                            <button onClick={() => handleEditUser(user)}>Editar</button>
-                        </li>
-                    ))
-                }
+                    <form class="formulary">
 
-            </ol>
+                        <label>
+                            <input type="text" htmlFor="username" name="username" id="textname" value={user.name} onChange={handlenameChange} placeholder="Nombre" className="input" />
+                        </label>
+                        <label >
+                            <input type="text" htmlFor="userLastName" name="userlastName" id="textLastName" value={user.lastName} onChange={handlelastNameChange} placeholder="Primer Apellido" className="input" />
+                        </label>
+                        <label >
+                            <input type="text" htmlFor="secondLastName" name="secondLastName" id="textsecondLastName" value={user.secondLastName} onChange={handlesecondLastNameChange} placeholder="Segundo Apellido" className="input" />
+                        </label>
+                        <label>
+                            <input type="email" htmlFor="email" name="email" id="email" value={user.email} onChange={handleemailChange} placeholder="Email" className="input" />
+                        </label>
+                        <label>
+                            <input type="text" htmlFor="telephone" name="telephone" id="telephone" value={user.telephone} onChange={handletelephoneChange} placeholder="Teléfono" className="input" />
+                        </label>
+
+                        <button onClick={handleAddUserToList} class="send-button">Añadir usuario</button>
+                    </form>
+                </section>
+               
+
+                {/* Tabla */}
+
+
+                <section>
+                    <div className="list">
+
+                        <h1 id="table-title">Lista</h1>
+
+                        <table className="listTable">
+
+                            <thead>
+
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th>Primer Apellido</th>
+                                    <th>Segundo Apellido</th>
+                                    <th>E-mail</th>
+                                    <th>Teléfono</th>
+                                    <th>Eliminar</th>
+                                    <th>Editar</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tableBody">
+
+                                {
+                                    userList.map((user, index) => (
+                                        <tr key={index}>
+                                            <td>
+                                                {user.name}
+                                            </td>
+                                            <td>
+                                                {user.lastName}
+                                            </td>
+                                            <td>
+                                                {user.secondLastName}
+                                            </td>
+                                            <td>
+                                                {user.email}
+                                            </td>
+                                            <td>
+                                                {user.telephone}
+                                            </td>
+                                            <td>
+                                                <img src="public/delete-icon.svg" class="edit-icon" alt="Editar"
+                                                    onClick={() => handleDeleteUser(user.id)}></img>
+                                                {/* <button onClick={() => handleDeleteUser(user.id)}>Eliminar</button> */}
+                                            </td>
+                                            <td>
+                                                <img src="public/edit-icon.svg" class="delete-icon" alt="Editar"
+                                                    onClick={() => handleEditUser(user)}></img>
+                                                {/* <button onClick={() => handleEditUser(user)}>Editar</button> */}
+                                            </td>
+                                        </tr>
+
+                                    ))
+                                }
+                            </tbody>
+                        </table >
+                    </div>
+                </section>
+            </section>
+
+
+
+            {/* Formulario */}
+
+            {/* <section class="mainGroup">
+
+                <section class="formulary-background">
+
+                <form class="formulary">
+                    
+                    <label>
+                        <input type="text" htmlFor="username" name="username" id="textname" value={user.name} onChange={handlenameChange} className="input"/>
+                    </label>
+                    <label >
+                        <input type="text" htmlFor="userLastName" name="userlastName" id="textLastName" value={user.lastName} onChange={handlelastNameChange} className="input" />
+                    </label>
+                    <label >
+                        <input type="text" htmlFor="secondLastName" name="secondLastName" id="textsecondLastName" value={user.secondLastName} onChange={handlesecondLastNameChange} className="input" />
+                    </label>
+                    <label>
+                        <input type="text" htmlFor="email" name="email" id="email" value={user.email} onChange={handleemailChange} className="input" />
+                    </label>
+                    <label>
+                        <input type="text" htmlFor="telephone" name="telephone" id="telephone" value={user.telephone} onChange={handletelephoneChange} className="input" />
+                    </label>
+
+                    <button onClick={handleAddUserToList} class="send-button">Añadir usuario</button>
+</form>
+                </section>
+            </section> */}
+
+
+            {/* <ol>
+
+                    {
+                        userList.map((user, index) => (
+                            <li key={index}> {user.name} {user.lastName} {user.secondLastName} {user.email}
+                                {user.telephone}
+                                <button onClick={() => handleDeleteUser(user.id)}>Eliminar</button>
+                                <button onClick={() => handleEditUser(user)}>Editar</button>
+                            </li>
+                        ))
+                    }
+
+                </ol> */}
 
 
         </>

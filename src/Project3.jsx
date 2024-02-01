@@ -86,8 +86,52 @@ const UserList = () => {
         });
     }
 
+    //VALIDACIONES
+    //validar que solo se puedan escribir letras en las casillas
+    function valideKey(evt) {
+
+        // code es la representación ASCII decimal de la tecla presionada.
+        var code = evt.which || evt.keyCode;
+
+        if (code === 8 || code === 9) {
+             // Permitir retroceso (backspace) y tabulación (tab).
+            return true;
+        } else if ((code >= 65 && code <= 90) || (code >= 97 && code <= 122)) {
+            // Permitir letras (A-Z y a-z).
+            return true;
+        } else if (code >= 48 && code <= 57) {
+            // Bloquear números (0-9).
+            evt.preventDefault();
+            return false;
+        } else {
+            // Bloquear otras teclas.
+            evt.preventDefault();
+            return false;
+        }
+    }
 
 
+    const valideNumKey = (evt) => {
+        // code es la representación ASCII decimal de la tecla presionada.
+        const code = evt.which || evt.keyCode;
+    
+        if (code === 8) {
+          // Permitir retroceso (backspace).
+          return true;
+        } else if ((code >= 48 && code <= 57) || (code >= 96 && code <= 105)) {
+            // Permitir números del 0 al 9 tanto en el teclado de letras como en el teclado numérico.
+          return true;
+        } else {
+          // Bloquear otras teclas.
+          evt.preventDefault();
+          return false;
+        }
+      };
+
+
+
+
+    
 
     return (
 
@@ -123,31 +167,31 @@ const UserList = () => {
 
 
             <section class="mainGroup">
-                
+
                 <section class="formulary-background">
 
                     <form class="formulary">
 
                         <label>
-                            <input type="text" htmlFor="username" name="username" id="textname" value={user.name} onChange={handlenameChange} placeholder="Nombre" className="input" />
+                            <input type="text" htmlFor="username" name="username" id="textname" value={user.name} onChange={handlenameChange} onKeyDown={(event) => valideKey(event)} placeholder="Nombre" className="input" required />
                         </label>
                         <label >
-                            <input type="text" htmlFor="userLastName" name="userlastName" id="textLastName" value={user.lastName} onChange={handlelastNameChange} placeholder="Primer Apellido" className="input" />
+                            <input type="text" htmlFor="userLastName" name="userlastName" id="textLastName" value={user.lastName} onChange={handlelastNameChange} onKeyDown={(event) => valideKey(event)} placeholder="Primer Apellido" className="input" required />
                         </label>
                         <label >
-                            <input type="text" htmlFor="secondLastName" name="secondLastName" id="textsecondLastName" value={user.secondLastName} onChange={handlesecondLastNameChange} placeholder="Segundo Apellido" className="input" />
+                            <input type="text" htmlFor="secondLastName" name="secondLastName" id="textsecondLastName" value={user.secondLastName} onChange={handlesecondLastNameChange} onKeyDown={(event) => valideKey(event)} placeholder="Segundo Apellido" className="input" required />
                         </label>
                         <label>
-                            <input type="email" htmlFor="email" name="email" id="email" value={user.email} onChange={handleemailChange} placeholder="Email" className="input" />
+                            <input type="email" htmlFor="email" name="email" id="email" value={user.email} onChange={handleemailChange} placeholder="Email" className="input" required />
                         </label>
                         <label>
-                            <input type="text" htmlFor="telephone" name="telephone" id="telephone" value={user.telephone} onChange={handletelephoneChange} placeholder="Teléfono" className="input" />
+                            <input type="text" htmlFor="telephone" name="telephone" id="telephone" value={user.telephone} onChange={handletelephoneChange}  onKeyDown={(event) => valideNumKey(event)} placeholder="Teléfono" className="input" required />
                         </label>
 
                         <button onClick={handleAddUserToList} class="send-button">Añadir usuario</button>
                     </form>
                 </section>
-               
+
 
                 {/* Tabla */}
 

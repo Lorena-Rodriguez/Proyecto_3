@@ -92,14 +92,14 @@ const UserList = () => {
 
         // code es la representación ASCII decimal de la tecla presionada.
         var code = evt.which || evt.keyCode;
-
+console.log (code);
         if (code === 8 || code === 9) {
              // Permitir retroceso (backspace) y tabulación (tab).
             return true;
         } else if ((code >= 65 && code <= 90) || (code >= 97 && code <= 122)) {
             // Permitir letras (A-Z y a-z).
             return true;
-        } else if (code >= 48 && code <= 57) {
+        } else if ((code >= 48 && code <= 57) || (code >= 96 && code <= 105)) {
             // Bloquear números (0-9).
             evt.preventDefault();
             return false;
@@ -139,21 +139,21 @@ const UserList = () => {
 
             {/* Navbar */}
 
-            <div class="container" id="mainContainer">
+            <div className="container" id="mainContainer">
 
-                <nav class="navBar">
+                <nav className="navBar">
                     <a href="../landingPage/index.html">
-                        <img class="link" id="logo" src="public/logo.svg" alt="logo"></img>
+                        <img className="link" id="logo" src="public/logo.svg" alt="logo"></img>
                     </a>
-                    <div class="iconHolder">
+                    <div className="iconHolder">
 
-                        <div class="homeIcon">
-                            <img class="icon" src="public/home-mobile-ui-svgrepo-com.svg" alt="icon-home"></img>
-                            <h3> <a class="link" href="../landingPage/index.html">Home</a> </h3>
+                        <div className="homeIcon">
+                            <img className="icon" src="public/home-mobile-ui-svgrepo-com.svg" alt="icon-home"></img>
+                            <h3> <a className="link" href="../landingPage/index.html">Home</a> </h3>
                         </div>
-                        <div class="helpIcon">
-                            <img class="icon" src="public/help-circle-svgrepo-com.svg" alt="icon-help"></img>
-                            <h3> <a class="link" href="#">Help</a> </h3>
+                        <div className="helpIcon">
+                            <img className="icon" src="public/help-circle-svgrepo-com.svg" alt="icon-help"></img>
+                            <h3> <a className="link" href="#">Help</a> </h3>
                         </div>
 
                     </div>
@@ -166,11 +166,11 @@ const UserList = () => {
             {/* Formulario */}
 
 
-            <section class="mainGroup">
+            <section className="mainGroup">
 
-                <section class="formulary-background">
+                <section className="formulary-background">
 
-                    <form class="formulary">
+                    <form className="formulary">
 
                         <label>
                             <input type="text" htmlFor="username" name="username" id="textname" value={user.name} onChange={handlenameChange} onKeyDown={(event) => valideKey(event)} placeholder="Nombre" className="input" required />
@@ -188,7 +188,7 @@ const UserList = () => {
                             <input type="text" htmlFor="telephone" name="telephone" id="telephone" value={user.telephone} onChange={handletelephoneChange}  onKeyDown={(event) => valideNumKey(event)} placeholder="Teléfono" className="input" required />
                         </label>
 
-                        <button onClick={handleAddUserToList} class="send-button">Añadir usuario</button>
+                        <button onClick={handleAddUserToList} className="send-button">Añadir usuario</button>
                     </form>
                 </section>
 
@@ -236,12 +236,12 @@ const UserList = () => {
                                                 {user.telephone}
                                             </td>
                                             <td>
-                                                <img src="public/delete-icon.svg" class="edit-icon" alt="Editar"
+                                                <img src="public/delete-icon.svg" className="edit-icon" alt="Editar"
                                                     onClick={() => handleDeleteUser(user.id)}></img>
                                                 {/* <button onClick={() => handleDeleteUser(user.id)}>Eliminar</button> */}
                                             </td>
                                             <td>
-                                                <img src="public/edit-icon.svg" class="delete-icon" alt="Editar"
+                                                <img src="public/edit-icon.svg" className="delete-icon" alt="Editar"
                                                     onClick={() => handleEditUser(user)}></img>
                                                 {/* <button onClick={() => handleEditUser(user)}>Editar</button> */}
                                             </td>
@@ -257,49 +257,7 @@ const UserList = () => {
 
 
 
-            {/* Formulario */}
-
-            {/* <section class="mainGroup">
-
-                <section class="formulary-background">
-
-                <form class="formulary">
-                    
-                    <label>
-                        <input type="text" htmlFor="username" name="username" id="textname" value={user.name} onChange={handlenameChange} className="input"/>
-                    </label>
-                    <label >
-                        <input type="text" htmlFor="userLastName" name="userlastName" id="textLastName" value={user.lastName} onChange={handlelastNameChange} className="input" />
-                    </label>
-                    <label >
-                        <input type="text" htmlFor="secondLastName" name="secondLastName" id="textsecondLastName" value={user.secondLastName} onChange={handlesecondLastNameChange} className="input" />
-                    </label>
-                    <label>
-                        <input type="text" htmlFor="email" name="email" id="email" value={user.email} onChange={handleemailChange} className="input" />
-                    </label>
-                    <label>
-                        <input type="text" htmlFor="telephone" name="telephone" id="telephone" value={user.telephone} onChange={handletelephoneChange} className="input" />
-                    </label>
-
-                    <button onClick={handleAddUserToList} class="send-button">Añadir usuario</button>
-</form>
-                </section>
-            </section> */}
-
-
-            {/* <ol>
-
-                    {
-                        userList.map((user, index) => (
-                            <li key={index}> {user.name} {user.lastName} {user.secondLastName} {user.email}
-                                {user.telephone}
-                                <button onClick={() => handleDeleteUser(user.id)}>Eliminar</button>
-                                <button onClick={() => handleEditUser(user)}>Editar</button>
-                            </li>
-                        ))
-                    }
-
-                </ol> */}
+           
 
 
         </>

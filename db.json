@@ -1,35 +1,19 @@
 {
   "users": [
     {
-      "id": "4c49",
+      "id": "9317",
       "name": "lore",
-      "lastName": "",
+      "lastName": "rod",
       "secondLastName": "cor",
       "email": "lorenarodriguezc@gmail.com",
       "telephone": "666555444"
     },
     {
-      "id": "e3bc",
-      "name": "lore",
-      "lastName": "",
-      "secondLastName": "cor",
-      "email": "lorenarodriguezc@gmail.com",
-      "telephone": "666555444"
-    },
-    {
-      "id": "ef99",
+      "id": "3c5d",
       "name": "lore",
       "lastName": "rod",
       "secondLastName": "cor",
       "email": "lorenarodriguezc@gmail.com",
-      "telephone": ""
-    },
-    {
-      "id": "41f9",
-      "name": "lore",
-      "lastName": "rod",
-      "secondLastName": "cor",
-      "email": "",
       "telephone": "666555444"
     }
   ]

@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import { UserService } from "./userservice";
 import "./project3.css"
 
+ //hemos usado useState para crear y actualizar las variables de usuario y de la lista de usuarios. "user" la inicializamos
+ //en un string vacío. "userList" inicializa en un array vacío.
 
 const UserList = () => {
 
@@ -19,7 +21,7 @@ const UserList = () => {
     const [userList, setUserList] = useState([]);
 
 
-
+    
 
     async function getData() {
         let users = await UserService.getAllUsers();
@@ -58,7 +60,8 @@ const UserList = () => {
     }
 
 
-
+    //esta función coge el valor de "user" usando "setUser" y le asigna el valor del input, siendo el evento que dispara esta función
+    //cualquier cambio que un usuario haga en el input al editarlo
 
     function handlenameChange(e) {
         setUser({
@@ -92,11 +95,11 @@ const UserList = () => {
 
         // code es la representación ASCII decimal de la tecla presionada.
         var code = evt.which || evt.keyCode;
-console.log (code);
+        console.log(code);
         if (code === 8 || code === 9) {
-             // Permitir retroceso (backspace) y tabulación (tab).
+            // Permitir retroceso (backspace) y tabulación (tab).
             return true;
-        } else if ((code >= 65 && code <= 90) || (code >= 97 && code <= 122)) {
+        } else if ((code >= 65 && code <= 90) || (code >= 105 && code <= 122)) {
             // Permitir letras (A-Z y a-z).
             return true;
         } else if ((code >= 48 && code <= 57) || (code >= 96 && code <= 105)) {
@@ -114,24 +117,24 @@ console.log (code);
     const valideNumKey = (evt) => {
         // code es la representación ASCII decimal de la tecla presionada.
         const code = evt.which || evt.keyCode;
-    
+
         if (code === 8) {
-          // Permitir retroceso (backspace).
-          return true;
+            // Permitir retroceso (backspace).
+            return true;
         } else if ((code >= 48 && code <= 57) || (code >= 96 && code <= 105)) {
             // Permitir números del 0 al 9 tanto en el teclado de letras como en el teclado numérico.
-          return true;
+            return true;
         } else {
-          // Bloquear otras teclas.
-          evt.preventDefault();
-          return false;
+            // Bloquear otras teclas.
+            evt.preventDefault();
+            return false;
         }
-      };
+    };
 
 
 
 
-    
+
 
     return (
 
@@ -185,7 +188,7 @@ console.log (code);
                             <input type="email" htmlFor="email" name="email" id="email" value={user.email} onChange={handleemailChange} placeholder="Email" className="input" required />
                         </label>
                         <label>
-                            <input type="text" htmlFor="telephone" name="telephone" id="telephone" value={user.telephone} onChange={handletelephoneChange}  onKeyDown={(event) => valideNumKey(event)} placeholder="Teléfono" className="input" required />
+                            <input type="text" htmlFor="telephone" name="telephone" id="telephone" value={user.telephone} onChange={handletelephoneChange} onKeyDown={(event) => valideNumKey(event)} placeholder="Teléfono" className="input" required />
                         </label>
 
                         <button onClick={handleAddUserToList} className="send-button">Añadir usuario</button>
@@ -195,7 +198,9 @@ console.log (code);
 
                 {/* Tabla */}
 
-
+    {/* En el return usamos un .map() en el array userList para transformar sus elementos. .map() itera sobre cada elemento, lo transforma 
+    y devuelve un array nuevo con los elementos transformados. Aquí lo usamos para asignar a cada elemento un <li> con su contenido 
+     (que es un nombre, un string) */}
                 <section>
                     <div className="list">
 
@@ -257,7 +262,7 @@ console.log (code);
 
 
 
-           
+
 
 
         </>

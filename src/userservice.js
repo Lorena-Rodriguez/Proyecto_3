@@ -30,10 +30,10 @@ export const UserService = {
        
     },
     async updateUser(user) {
+
         await apiClient.patch(`/users/${user.id}`, user);
         
-        //await apiClient.patch("/users", currentlyUser)
-    },
+    }
 
     
 

@@ -30,11 +30,11 @@ nav {
   margin: 5px
 }
 
-.homeIcon{
+.homeIcon {
   padding-right: 15px;
 }
 
-.helpIcon{
+.helpIcon {
   padding-right: 15px;
 }
 
@@ -85,7 +85,7 @@ a {
   font-weight: 400;
   font-size: 12px;
   margin: 50px;
-  
+
 }
 
 
@@ -96,7 +96,7 @@ a {
   gap: 10px;
   width: 345px;
   height: 550;
-  background-color: #F8DBDC;        
+  background-color: #F8DBDC;
   border-radius: 30px;
   padding: 20px
 }
@@ -133,122 +133,123 @@ a {
 
 td,
 th {
-    text-align: center;
-    padding: 15px;
-    border: none;
-    color: #393838;
+  text-align: center;
+  padding: 15px;
+  border: none;
+  color: #393838;
 }
 
 tr:nth-child(even) {
-    background-color: #D4E2D4;
-    /* Color de fondo para filas pares */
+  background-color: #D4E2D4;
+  /* Color de fondo para filas pares */
 }
 
 tr:nth-child(odd) {
-    background-color: #FAF3F0;
-    /* Color de fondo para filas impares */
+  background-color: #FAF3F0;
+  /* Color de fondo para filas impares */
 }
 
 #table-title {
-    text-align: center;
-    margin-bottom: 10px;
-    font-size: xx-large;
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: xx-large;
 }
 
 table {
-    border-collapse: collapse;
-    /* Fusiona los bordes de las celdas */
-    width: 100%;
+  border-collapse: collapse;
+  /* Fusiona los bordes de las celdas */
+  width: 100%;
 }
 
 @media screen and (min-width: 431px) {
 
   /* Responsive Desktop */
- 
+
   .mainGroup {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      justify-content: space-around;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    justify-content: space-around;
 
   }
 
-  .listTable{
+  .listTable {
     width: 900px;
   }
+
   .form,
   .list {
-      padding: 10px; 
-      /* Añade espacio alrededor del contenido del formulario y la lista */
-      box-sizing: border-box;
-      flex: 1;
-      /* Ambos ocupan el mismo espacio inicialmente */
-      width: 1000px;
-      
-      
+    padding: 10px;
+    /* Añade espacio alrededor del contenido del formulario y la lista */
+    box-sizing: border-box;
+    flex: 1;
+    /* Ambos ocupan el mismo espacio inicialmente */
+    width: 1000px;
+
+
   }
 
   .form {
-      background-color: #F8DBDC;
-      margin-right: 5px;
+    background-color: #F8DBDC;
+    margin-right: 5px;
   }
 
 
 
   .listButton button {
-      background-color: #D4E2D4;
-      border-radius: 10px;
-      border-color: #000000;
-      border: 1px solid;
-      font-size: 16px;
-      width: 165px;
-      height: 49px;
+    background-color: #D4E2D4;
+    border-radius: 10px;
+    border-color: #000000;
+    border: 1px solid;
+    font-size: 16px;
+    width: 165px;
+    height: 49px;
   }
 
   select {
-      background-color: #D4E2D4;
-      border-radius: 10px;
-      border-color: #000000;
-      border: 1px solid;
-      font-size: 16px;
-      width: 165px;
-      height: 49px;
-      text-align: left;
-      padding-left: 20px;
+    background-color: #D4E2D4;
+    border-radius: 10px;
+    border-color: #000000;
+    border: 1px solid;
+    font-size: 16px;
+    width: 165px;
+    height: 49px;
+    text-align: left;
+    padding-left: 20px;
   }
 
   select option {
-      text-align: left;
+    text-align: left;
   }
 
   .listAndButtonsGroup {
-      display: flex;
-      flex-direction: column;
+    display: flex;
+    flex-direction: column;
   }
 
   #loadlistbutton {
-      padding-left: 75px;
+    padding-left: 75px;
   }
 
   .listButton {
-      display: flex;
-      flex-direction: row;
-      /* justify-content: space-around; */
-      align-items: center;
-      padding-top: 50px;
-      padding-left: 300px;
-      /* padding-right: 70px; */
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-around; */
+    align-items: center;
+    padding-top: 50px;
+    padding-left: 300px;
+    /* padding-right: 70px; */
   }
 
 
-@media screen and (max-width: 431px) {
+  @media screen and (max-width: 431px) {
 
-  .mainGroup {
+    .mainGroup {
       flex-direction: column;
-      
-  }
 
-  /* .listAndButtonsGroup {
+    }
+
+    /* .listAndButtonsGroup {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -264,11 +265,11 @@ table {
       height: 49px;
   } */
 
-   /* #loadlistbutton {
+    /* #loadlistbutton {
       padding-top: 42px;
   }  */
 
-  /* select {
+    /* select {
       background-color: #D4E2D4;
       border-radius: 10px;
       border-color: #000000;
@@ -291,10 +292,10 @@ table {
       align-items: center;
   } */
 
- 
 
-  .form,
-  .list {
+
+    .form,
+    .list {
       flex: 1;
       /* Ambos ocupan el mismo espacio */
       margin-right: 0;
@@ -302,27 +303,27 @@ table {
       margin-top: 0;
       /* Restablece el espacio entre form y list */
       width: 430px;
-     
-  }
+
+    }
 
 
 
-  .form {
+    .form {
       order: 2;
       /* Cambia el orden de visualización en dispositivos móviles */
       margin-top: 10px;
       /* Agrega espacio entre list y form en dispositivos móviles */
-  }
+    }
 
-  .listTable{
-    width: 428px;
-  }
-  
+    .listTable {
+      width: 428px;
+    }
 
-  .list {
-    overflow-x: auto;
+
+    .list {
+      overflow-x: auto;
+    }
+
   }
-  
-}
 
 }

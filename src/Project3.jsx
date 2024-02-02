@@ -198,9 +198,7 @@ const UserList = () => {
 
                 {/* Tabla */}
 
-    {/* En el return usamos un .map() en el array userList para transformar sus elementos. .map() itera sobre cada elemento, lo transforma 
-    y devuelve un array nuevo con los elementos transformados. Aquí lo usamos para asignar a cada elemento un <li> con su contenido 
-     (que es un nombre, un string) */}
+   
                 <section>
                     <div className="list">
 
@@ -243,12 +241,12 @@ const UserList = () => {
                                             <td>
                                                 <img src="public/delete-icon.svg" className="edit-icon" alt="Editar"
                                                     onClick={() => handleDeleteUser(user.id)}></img>
-                                                {/* <button onClick={() => handleDeleteUser(user.id)}>Eliminar</button> */}
+                                               
                                             </td>
                                             <td>
                                                 <img src="public/edit-icon.svg" className="delete-icon" alt="Editar"
                                                     onClick={() => handleEditUser(user)}></img>
-                                                {/* <button onClick={() => handleEditUser(user)}>Editar</button> */}
+                                               
                                             </td>
                                         </tr>
 

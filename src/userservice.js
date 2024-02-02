@@ -33,7 +33,7 @@ export const UserService = {
 
         await apiClient.patch(`/users/${user.id}`, user);
         
-    }
+    },
 
     
 

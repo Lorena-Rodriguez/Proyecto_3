@@ -3,11 +3,10 @@ import { useState, useEffect } from "react";
 import { UserService } from "./userservice";
 import "./project3.css"
 
- //hemos usado useState para crear y actualizar las variables de usuario y de la lista de usuarios. "user" la inicializamos
- //en un string vacío. "userList" inicializa en un array vacío.
+//hemos usado useState para crear y actualizar las variables de usuario y de la lista de usuarios. "user" la inicializamos
+//en un string vacío. "userList" inicializa en un array vacío.
 
 const UserList = () => {
-
 
     const [user, setUser] = useState({
         name: '',
@@ -21,7 +20,7 @@ const UserList = () => {
     const [userList, setUserList] = useState([]);
 
 
-    
+    //CRUD:
 
     async function getData() {
         let users = await UserService.getAllUsers();
@@ -55,6 +54,7 @@ const UserList = () => {
 
     }
 
+    //delete
     async function handleDeleteUser(id) {
         await UserService.deleteUser(id);
     }
@@ -89,6 +89,7 @@ const UserList = () => {
         });
     }
 
+
     //VALIDACIONES
     //validar que solo se puedan escribir letras en las casillas
     function valideKey(evt) {
@@ -113,7 +114,7 @@ const UserList = () => {
         }
     }
 
-
+    //validar que solo se puedan escribir números en las casillas
     const valideNumKey = (evt) => {
         // code es la representación ASCII decimal de la tecla presionada.
         const code = evt.which || evt.keyCode;
@@ -130,9 +131,6 @@ const UserList = () => {
             return false;
         }
     };
-
-
-
 
 
 
@@ -198,7 +196,7 @@ const UserList = () => {
 
                 {/* Tabla */}
 
-   
+
                 <section>
                     <div className="list">
 
@@ -241,12 +239,12 @@ const UserList = () => {
                                             <td>
                                                 <img src="public/delete-icon.svg" className="edit-icon" alt="Editar"
                                                     onClick={() => handleDeleteUser(user.id)}></img>
-                                               
+
                                             </td>
                                             <td>
                                                 <img src="public/edit-icon.svg" className="delete-icon" alt="Editar"
                                                     onClick={() => handleEditUser(user)}></img>
-                                               
+
                                             </td>
                                         </tr>
 
@@ -257,11 +255,6 @@ const UserList = () => {
                     </div>
                 </section>
             </section>
-
-
-
-
-
 
         </>
 

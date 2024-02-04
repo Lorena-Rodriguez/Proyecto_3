@@ -35,7 +35,4 @@ export const UserService = {
         
     },
 
-    
-
-
 }

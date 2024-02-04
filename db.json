@@ -7,30 +7,6 @@
       "secondLastName": "Pérez",
       "email": "Susi@gmail.com",
       "telephone": "644555999"
-    },
-    {
-      "id": "ac05",
-      "name": "lore",
-      "lastName": "rod",
-      "secondLastName": "",
-      "email": "lorenarodriguezc@gmail.com",
-      "telephone": "666555444"
-    },
-    {
-      "id": "eb25",
-      "name": "lore",
-      "lastName": "rodrig",
-      "secondLastName": "cor",
-      "email": "lorenarodriguezc@gmail.com",
-      "telephone": "666555444"
-    },
-    {
-      "id": "6040",
-      "name": "lore",
-      "lastName": "rod",
-      "secondLastName": "cor",
-      "email": "lorenarodriguezc@gmail.com",
-      "telephone": "222"
     }
   ]
 }
